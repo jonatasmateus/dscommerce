@@ -58,6 +58,13 @@ INSERT INTO product_category_tb (product_id, category_id) VALUES (25, 3);
 INSERT INTO user_tb (name, email, phone, password, birth_date) VALUES ('Maria Brown', 'maria@gmail.com', '988888888', '123456', '2001-07-25');
 INSERT INTO user_tb (name, email, phone, password, birth_date) VALUES ('Alex Green', 'alex@gmail.com', '977777777', '123456', '1987-12-13');
 
+INSERT INTO role_tb (authority) VALUES ('ROLE_CLIENT');
+INSERT INTO role_tb (authority) VALUES ('ROLE_ADMIN');
+
+INSERT INTO user_role_tb (user_id, role_id) VALUES (1, 1);
+INSERT INTO user_role_tb (user_id, role_id) VALUES (2, 1);
+INSERT INTO user_role_tb (user_id, role_id) VALUES (2, 2);
+
 INSERT INTO order_tb (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-25T13:00:00Z', 1, 1);
 INSERT INTO order_tb (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-29T15:50:00Z', 3, 2);
 INSERT INTO order_tb (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-08-03T14:20:00Z', 0, 1);
