@@ -1,11 +1,11 @@
 package com.jonatasmateus.dscommerce.dto;
 
-public class FieldMessage {
+public class FieldMessageDTO {
 
     private final String fieldName;
     private final String message;
 
-    public FieldMessage(String fieldName, String message) {
+    public FieldMessageDTO(String fieldName, String message) {
         this.fieldName = fieldName;
         this.message = message;
     }

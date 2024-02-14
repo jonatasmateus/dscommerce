@@ -2,14 +2,14 @@ package com.jonatasmateus.dscommerce.dto;
 
 import java.time.Instant;
 
-public class CustomError {
+public class CustomErrorDTO {
 
     private final Instant timestamp;
     private final Integer status;
     private final String error;
     private final String path;
 
-    public CustomError(Instant timestamp, Integer status, String error, String path) {
+    public CustomErrorDTO(Instant timestamp, Integer status, String error, String path) {
         this.timestamp = timestamp;
         this.status = status;
         this.error = error;
