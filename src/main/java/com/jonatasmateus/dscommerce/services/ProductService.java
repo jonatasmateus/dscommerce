@@ -1,7 +1,9 @@
 package com.jonatasmateus.dscommerce.services;
 
+import com.jonatasmateus.dscommerce.dto.CategoryDTO;
 import com.jonatasmateus.dscommerce.dto.ProductDTO;
 import com.jonatasmateus.dscommerce.dto.ProductMinDTO;
+import com.jonatasmateus.dscommerce.entities.Category;
 import com.jonatasmateus.dscommerce.entities.Product;
 import com.jonatasmateus.dscommerce.repositories.ProductRepository;
 import com.jonatasmateus.dscommerce.services.exceptions.DatabaseException;
@@ -71,5 +73,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgURL(dto.getImgURL());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDto : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDto.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
