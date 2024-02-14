@@ -1,6 +1,7 @@
 package com.jonatasmateus.dscommerce.services;
 
 import com.jonatasmateus.dscommerce.dto.ProductDTO;
+import com.jonatasmateus.dscommerce.dto.ProductMinDTO;
 import com.jonatasmateus.dscommerce.entities.Product;
 import com.jonatasmateus.dscommerce.repositories.ProductRepository;
 import com.jonatasmateus.dscommerce.services.exceptions.DatabaseException;
@@ -21,9 +22,9 @@ public class ProductService {
     private ProductRepository repository;
 
     @Transactional
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> result = repository.searchByName(name, pageable);
-        return result.map(ProductDTO::new);
+        return result.map(ProductMinDTO::new);
     }
 
     @Transactional(readOnly = true)
